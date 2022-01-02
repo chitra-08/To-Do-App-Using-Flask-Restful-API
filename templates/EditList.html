@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit the Todo item</title>
+    <link href="{{url_for('static', filename ='style.css')}}" rel="stylesheet" />
+</head>
+<body>
+<div class="centered">
+    <h1 class="heading">You can edit the item with serial no. {{todoitems.itemid}}</h1>
+    <h2> <a href="/"><button class ="btn">Go back to main page</button></a></h2>
+    <form action="/edit/{{todoitems.itemid}}" method="post">
+        <input type="text" id="searchText" name="searchText" placeholder="Enter your text here.." value ="{{todoitems.item}}"/>
+        <input type="text" id="itmStat" name="itmStat" value ="{{todoitems.status}}"/>
+        <input type="submit" name="edit" id="edit" class="btn" value="Edit">
+    </form>
+</div>
+</body>
+</html>

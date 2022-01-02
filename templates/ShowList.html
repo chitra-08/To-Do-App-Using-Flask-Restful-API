@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show List</title>
+    <link href="{{url_for('static', filename ='style.css')}}" rel="stylesheet" />
+</head>
+<body>
+<div class="centered">
+    <h1 class="heading">Thank you for adding the item.</h1>
+    <h2> <a href="/"><button class ="btn">Go back to main page</button></a></h2>
+
+<table border="1">
+    {% for row in todoitems %}
+    <tr>
+        <td>{{row.itemid}}</td>
+        <td>{{row.item}}</td>
+        <td>{{row.status}}</td>
+        <td>{{row.itemDate}}</td>
+        <td><a href="/edit/{{row.itemid}}"><button class ="btn">Edit</button></a></td>
+        <td><a href="/delete/{{row.itemid}}"><button class ="btn">Delete</button></a></td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+</body>
+</html>
